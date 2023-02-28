@@ -10,4 +10,4 @@ const adsSchema = new mongoose.Schema({
   seller: { type: String, require: true, ref: 'User' }
 });
 
-module.exports = mongoose.model('Advert', adsSchema);
+module.exports = mongoose.model('Announcements', adsSchema);
