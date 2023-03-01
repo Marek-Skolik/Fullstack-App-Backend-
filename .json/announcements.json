@@ -7,7 +7,7 @@
         "img":"/public/img/DarkSideOfTheMoon.jpg",
         "price": 20,
         "location": "London",
-        "seller": "John Doe"
+        "seller": "63fe13a5cb0c71886a8e75f1"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "img":"/public/img/TheWall.jpg",
         "price": 15,
         "location": "Liverpool",
-        "seller": "Amanda Doe"
+        "seller": "63fe13a5cb0c71886a8e75f2"
     },
     {
         "id": 3,
@@ -27,17 +27,17 @@
         "img":"/public/img/SongsOfFaithAndDevotion.jpg",
         "price": 18,
         "location": "Berlin",
-        "seller": "Filip Ode"
+        "seller": "63fe13a5cb0c71886a8e75f3"
     },
     {
         "id": 4,
         "title":"Ozzy Osbourne - Ozzmosis",
-        "content": "Siódmy studyjny album brytyjskiego wokalisty Ozzy’ego Osbourne’a, wydany w roku 1995 .Według danych z kwietnia 2002 album sprzedał się w nakładzie 1 572 385 egzemplarzy na terenie Stanów Zjednoczonych.",
+        "content": "The seventh studio album by British singer Ozzy Osbourne, released in 1995. According to data from April 2002, the album sold 1,572,385 copies in the United States.",
         "public-date": "16.04.2020",
         "img":"/public/img/Ozzmosis.jpg",
         "price": 16,
         "location": "Warsaw",
-        "seller": "Tom Johns"
+        "seller": "63fe13a5cb0c71886a8e75f4"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "img":"/public/img/HighwayToHell.jpg",
         "price": 18,
         "location": "Berlin",
-        "seller": "Julia Thomas"
+        "seller": "63fe13a5cb0c71886a8e75f5"
     },
     {
         "id": 6,
@@ -57,6 +57,6 @@
         "img":"/public/img/RockBeliever.jpg",
         "price": 22,
         "location": "Amsterdam",
-        "seller": "Jane Williams"
+        "seller": "63fe13a5cb0c71886a8e75f6"
     }
 ]

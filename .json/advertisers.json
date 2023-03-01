@@ -4,41 +4,41 @@
         "login": "John",
         "password": "1234",
         "avatar": "",
-        "number": 785239103
+        "number": "785239103"
     },
     {
         "id": 2,
         "login": "Amanda",
         "password": "4321",
         "avatar": "",
-        "number": 903832921
+        "number": "903832921"
     },
     {
         "id": 3,
         "login": "Filip",
         "password": "Wr43rt",
         "avatar": "",
-        "number": 653123124
+        "number": "653123124"
     },
     {
         "id": 4,
         "login": "Tom",
         "password": "54TpR2",
         "avatar": "",
-        "number": 432859069
+        "number": "432859069"
     },
     {
         "id": 5,
         "login": "Julia",
         "password": "Ut54Bjk",
         "avatar": "",
-        "number": 543765789
+        "number": "543765789"
     },
     {
         "id": 6,
         "login": "Jane",
         "password": "fe23htT6",
         "avatar": "",
-        "number": 534123675
+        "number": "534123675"
     }
 ]
