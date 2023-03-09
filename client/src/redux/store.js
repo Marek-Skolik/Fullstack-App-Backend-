@@ -2,9 +2,11 @@ import { applyMiddleware, compose, combineReducers, legacy_createStore as create
 import thunk from 'redux-thunk';
 import advertReducer from './advertRedux.js';
 import initialState from './initialState.js';
+import requestReducer from './requestRedux.js';
 
 const subreducers = {
-  advert: advertReducer
+  advert: advertReducer,
+  request: requestReducer
 }
 
 const reducer = combineReducers(subreducers);
