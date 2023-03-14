@@ -7,7 +7,8 @@ import AddOffer from './components/Pages/AddOffer/AddOffer';
 import EditOffer from './components/Pages/EditOffer/EditOffer';
 import LoginPage from './components/Pages/LoginPage/LoginPage';
 import Register from './components/Pages/RegisterPage/RegisterPage';
-
+import SearchPage from './components/Pages/SearchPage/SearchPage';
+import FullOffer from './components/Pages/FullOffer/FullOffer';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/" element={<HomePage/>}/> 
           <Route path="/offer/add" element={<AddOffer/>}/>
           <Route path="/offer/edit" element={<EditOffer/>}/>
+          <Route path="/search/:searchPage" element={ <SearchPage/>}/>
+          <Route path="/offer/:id" element={<FullOffer/>}/>
           <Route path="/login" element={<LoginPage />}/>
           <Route path="/register" element={<Register/>}/>
         </Routes>

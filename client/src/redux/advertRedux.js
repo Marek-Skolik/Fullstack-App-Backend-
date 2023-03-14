@@ -1,4 +1,5 @@
 //selectors
+export const activeUser = state => state.user;
 
 // actions
 

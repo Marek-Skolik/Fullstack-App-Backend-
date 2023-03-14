@@ -2,17 +2,24 @@ import { Col, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { IMGS_URL } from '../../../config';
 import styles from './SingleOffer.module.scss';
+import { activeUser } from '../../../redux/advertRedux.js'
+import { useSelector } from "react-redux";
 
-const SingleOffer = (img) => {
+const SingleOffer = ({title, img, location, _id, seller}) => {
+
+    const user = useSelector(activeUser);
+
     return(
         <Col>
             <img src={IMGS_URL + img} alt="offer"></img>
-            <span className={styles.title}><b></b></span>
-            <span className="mb-1"><b>Localization: </b></span>
-            <span className="mb-1"><b>Seller:</b></span>
+            <span className={styles.title}><b>{title}</b></span>
+            <span className="mb-2 mx-2"><b>Location: </b>{location}</span>
+            <span className="mb-2"><b>Seller:</b>{seller}</span>
             <div className="d-flex justify-content-between">
-                <Link to={"/offer/" }><Button>View more</Button></Link>
-                <Link to={"/offer/edit/" }><Button variant="success">Edit Offer</Button></Link>
+                <Link to={"/offer/" + _id }><Button className="mb-2 mx-2">View more</Button></Link>
+                {user === seller.login && (
+                <Link to={"/offer/edit/" + _id}><Button variant="success">Edit Offer</Button></Link>
+                )}
             </div>
         </Col>
     )
