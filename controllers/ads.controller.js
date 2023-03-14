@@ -3,6 +3,7 @@ const getImageFileType = require('../utils/getImageFileType.js');
 const fs = require('fs');
 
 exports.getAllAds = async (req, res) => {
+  console.log(Advert);
   try {
     res.json(await Advert.find().populate('seller'));
   }

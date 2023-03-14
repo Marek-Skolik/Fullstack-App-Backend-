@@ -7,4 +7,4 @@ const advertsSchema = new mongoose.Schema({
   number: { type: Number, require: true }
 });
 
-module.exports = mongoose.model('Advertisers', advertsSchema);
+module.exports = mongoose.model('Advertiser', advertsSchema);
