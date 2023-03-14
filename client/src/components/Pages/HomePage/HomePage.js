@@ -11,6 +11,7 @@ const Homepage = () => {
     const dispatch = useDispatch();
     const request = useSelector(getRequest);
     const ads = useSelector(adsList);
+    console.log(ads);
     
     useEffect(() => {
       dispatch(fetchAds());

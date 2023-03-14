@@ -25,7 +25,7 @@ export const fetchAds = () => {
   return async (dispatch) => {
     dispatch(startRequest())
     try {
-      let res = await axios.get(`${API_URL}/api/announcements`)
+      let res = await axios.get(`${API_URL}/api/ads`)
       dispatch(loadAds(res.data))
       dispatch(endRequest())
     }
@@ -116,7 +116,7 @@ export const removeOffer = (id) => {
 export const searchOffer = (searchResoult) => {
   return async (dispatch) => {
     try {
-      let res = await axios.get(`${API_URL}/api/announcements/search/${searchResoult}`)
+      let res = await axios.get(`${API_URL}/api/ads/search/${searchResoult}`)
       dispatch(loadAds(res.data));
     }
     catch (err) {
@@ -126,8 +126,10 @@ export const searchOffer = (searchResoult) => {
 }
 
 const reducer = (statePart = [], action) => {
+  console.log(statePart, action);
   switch (action.type) {
     case LOAD_ADS:
+      console.log('abc');
       return [...action.payload]
     case ADD_AD:
       return [...statePart, {...action.payload}]
