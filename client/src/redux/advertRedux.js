@@ -1,5 +1,5 @@
 //selectors
-export const activeUser = state => state.user;
+export const activeUser = state => state.advertisers;
 
 // actions
 

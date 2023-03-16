@@ -129,7 +129,6 @@ const reducer = (statePart = [], action) => {
   console.log(statePart, action);
   switch (action.type) {
     case LOAD_ADS:
-      console.log('abc');
       return [...action.payload]
     case ADD_AD:
       return [...statePart, {...action.payload}]
