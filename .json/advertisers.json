@@ -1,44 +1,71 @@
-[ 
-    {
-        "id": 1,
-        "login": "John",
-        "password": "1234",
-        "avatar": "",
-        "number": "785239103"
-    },
-    {
-        "id": 2,
-        "login": "Amanda",
-        "password": "4321",
-        "avatar": "",
-        "number": "903832921"
-    },
-    {
-        "id": 3,
-        "login": "Filip",
-        "password": "Wr43rt",
-        "avatar": "",
-        "number": "653123124"
-    },
-    {
-        "id": 4,
-        "login": "Tom",
-        "password": "54TpR2",
-        "avatar": "",
-        "number": "432859069"
-    },
-    {
-        "id": 5,
-        "login": "Julia",
-        "password": "Ut54Bjk",
-        "avatar": "",
-        "number": "543765789"
-    },
-    {
-        "id": 6,
-        "login": "Jane",
-        "password": "fe23htT6",
-        "avatar": "",
-        "number": "534123675"
-    }
-]
+[{
+  "_id": {
+    "$oid": "6403285f953ed56612c4998c"
+  },
+  "id": 4,
+  "login": "Tom",
+  "password": "54TpR2",
+  "avatar": "",
+  "number": "432859069"
+},{
+  "_id": {
+    "$oid": "6403285f953ed56612c4998d"
+  },
+  "id": 5,
+  "login": "Julia",
+  "password": "Ut54Bjk",
+  "avatar": "",
+  "number": "543765789"
+},{
+  "_id": {
+    "$oid": "6403285f953ed56612c4998b"
+  },
+  "id": 3,
+  "login": "Filip",
+  "password": "Wr43rt",
+  "avatar": "",
+  "number": "653123124"
+},{
+  "_id": {
+    "$oid": "6403285f953ed56612c4998e"
+  },
+  "id": 6,
+  "login": "Jane",
+  "password": "fe23htT6",
+  "avatar": "",
+  "number": "534123675"
+},{
+  "_id": {
+    "$oid": "6403285f953ed56612c49989"
+  },
+  "id": 1,
+  "login": "John",
+  "password": "1234",
+  "avatar": "",
+  "number": "785239103"
+},{
+  "_id": {
+    "$oid": "6403285f953ed56612c4998a"
+  },
+  "id": 2,
+  "login": "Amanda",
+  "password": "4321",
+  "avatar": "",
+  "number": "903832921"
+},{
+  "_id": {
+    "$oid": "6411906604a0bb717cdfeb83"
+  },
+  "login": "JohnDoe",
+  "password": "$2b$10$h1ENxsSIDiEG3TWUN.gbrOuosXpPgm8G2xVGAKAEYYYrc55usxks.",
+  "avatar": "TheWall-1678872678193.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6411dc3d10f4a43ec8586dd3"
+  },
+  "login": "raventhein@gmail.com",
+  "password": "$2b$10$Wk.gRxZeg5T5.MEpeG2JB.JW4h3Cf3QKCehBziEbe6POxD9XHQA4G",
+  "avatar": "13_20_29_Spotify-1678892093579.jpg",
+  "__v": 0
+}]
