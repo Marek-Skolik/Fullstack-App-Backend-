@@ -9,8 +9,18 @@ import LoginPage from './components/Pages/LoginPage/LoginPage';
 import Register from './components/Pages/RegisterPage/RegisterPage';
 import SearchPage from './components/Pages/SearchPage/SearchPage';
 import FullOffer from './components/Pages/FullOffer/FullOffer';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchAds } from './redux/adsRedux';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAds());
+  }, [dispatch]);
+
   return (
     <div>
       <Container>

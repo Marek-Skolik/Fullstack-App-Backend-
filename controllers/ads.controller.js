@@ -35,6 +35,7 @@ exports.getAdsBySearchPhrase = async (req, res) => {
 
 exports.addAds = async (req, res) => {
   try {
+    console.log(req.file)
     const fileType = req.file ? await getImageFileType(req.file) : 'unknown';
     const imageExtensions = ['image/png', 'image/jpeg', 'image/gif'];
     const { title, content, date, price, localization } = req.body;
