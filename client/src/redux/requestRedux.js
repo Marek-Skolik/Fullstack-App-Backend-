@@ -1,16 +1,15 @@
 export const getRequest = state => state.request;
-const createActionName = actionName => `app/advertisers/${actionName}`;
+const createActionName = actionName => `app/announcements/${actionName}`;
 const START_REQUEST = createActionName('START_REQUEST');
 const END_REQUEST = createActionName('END_REQUEST');
 const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 const ADD_REQUEST = createActionName('ADD_REQUEST');
-const REMOVE_REQUEST = createActionName('REMOVE_REQUEST');
+
 
 export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = () => ({ type: ERROR_REQUEST });
 export const addRequest = () => ({ type: ADD_REQUEST });
-export const removeRequest = () => ({ type: REMOVE_REQUEST });
 
 
 const reducer = (statePart = [], action) => {
@@ -27,10 +26,6 @@ const reducer = (statePart = [], action) => {
       case ADD_REQUEST:
         return {
           pending: false, error: null, success: 'adding',
-        };
-      case REMOVE_REQUEST:
-        return {
-          pending: false, error: null, success: 'removing',
         };
       case ERROR_REQUEST:
         return {

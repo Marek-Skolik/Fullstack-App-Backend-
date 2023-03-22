@@ -13,13 +13,11 @@ const createActionName = actionName => `app/announcements/${actionName}`;
 const LOAD_ADS = createActionName('LOAD_ADS');
 const ADD_AD = createActionName('ADD_AD');
 const EDIT_AD = createActionName('EDIT_AD');
-const REMOVE_AD = createActionName('REMOVE_AD');
 
 // action creators
 export const loadAds = payload => ({ type: LOAD_ADS, payload});
 export const addAd = payload => ({ type: ADD_AD, payload});
 export const editAd = payload => ({ type: EDIT_AD, payload });
-export const removeAd = payload => ({ type: REMOVE_AD, payload });
 
 export const fetchAds = () => {
   return async (dispatch) => {
@@ -35,20 +33,20 @@ export const fetchAds = () => {
   }
 };
 
-export const addOffer = (title, price, location, date, description, photo) => {
+export const addOffer = (title, price, location, publicDate, content, img) => {
   return async (dispatch) => {
     try {
       const data = new FormData();
       data.append('title', title);
       data.append('price', price);
       data.append('location', location);
-      data.append('date', date);
-      data.append('content', description);
-      data.append('img', photo);
+      data.append('date', publicDate);
+      data.append('content', content);
+      data.append('img', img);
       dispatch(startRequest())
 
       const res = await axios.post(
-        `${API_URL}/api/announcements`,
+        `${API_URL}/api/ads`,
         data,
         { withCredentials: true },
         {
@@ -93,30 +91,11 @@ export const editOffer = (title, price, location, date, description, photo, id) 
   }
 }
 
-export const removeOffer = (id) => {
-  return async (dispatch) => {
-    try {
-      dispatch(startRequest())
-      await axios.delete(
-        `${API_URL}/api/ads/${id}`,
-        { withCredentials: true },
-        {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        }
-      )
-      await dispatch(removeAd({ _id: id }));
-      //dispatch(removeRequest())
-    }
-    catch (err) {
-      console.log(err)
-    }
-  }
-}
 
-export const searchOffer = (searchResoult) => {
+export const searchOffer = (searchPage) => {
   return async (dispatch) => {
     try {
-      let res = await axios.get(`${API_URL}/api/ads/search/${searchResoult}`)
+      let res = await axios.get(`${API_URL}/api/announcements/search/${searchPage}`)
       dispatch(loadAds(res.data));
     }
     catch (err) {
@@ -134,8 +113,6 @@ const reducer = (statePart = [], action) => {
       return [...statePart, {...action.payload}]
     case EDIT_AD:
       return [...statePart.map((offer) => offer._id === action.payload._id ? {...offer, ...action.payload} : offer)]
-    case REMOVE_AD:
-      return statePart.filter((offer) => offer._id !== action.payload._id)
     default:
       return statePart
   };
