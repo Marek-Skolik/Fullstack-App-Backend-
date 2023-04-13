@@ -1,6 +1,6 @@
 import SingleOffer from "../SingleOffer/SingleOffer";
 import { Container, Row, Alert } from "react-bootstrap";
-import { adsList } from "../../../redux/adsRedux";
+import { adsList, getAdsBySearchPhrase } from "../../../redux/adsRedux";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -11,11 +11,7 @@ const SearchPage = () => {
 
   const dispatch = useDispatch();
   const { searchPage } = useParams();
-  const ads = useSelector(adsList);
-
-  useEffect(() => {
-    dispatch(searchOffer(searchPage))
-    }, [ads]);
+  const ads = useSelector(state => getAdsBySearchPhrase(state, searchPage));
 
   return (
     <Container>

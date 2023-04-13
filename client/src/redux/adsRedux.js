@@ -5,6 +5,9 @@ import { API_URL } from '../../src/config'
 
 // selectors
 export const adsList = state => state.announcements;
+export const getAdsBySearchPhrase = (state, searchPhrase) => {
+  console.log(state, searchPhrase)
+return (state.announcements.filter(ad => ad.title.toLowerCase().includes( searchPhrase.toLowerCase())) )}
 export const getOfferById = (state, offerId) => state.announcements.find(offer => offer._id === offerId);
 
 //actions 
@@ -42,18 +45,34 @@ export const addOffer = (title, price, location, publicDate, content, img) => {
       data.append('location', location);
       data.append('date', publicDate);
       data.append('content', content);
-      data.append('img', img);
+      data.append('pic', img);
       dispatch(startRequest())
 
-      const res = await axios.post(
+      /*const res = await axios.post(
         `${API_URL}/api/ads`,
         data,
         { withCredentials: true },
         {
           headers: { 'Content-Type': 'multipart/form-data' },
         }
-      )
-      await dispatch(addAd(res.data));
+      )*/
+      const options = {
+        method: 'POST',
+        credentials: 'include',
+        body: data,
+        };
+
+      fetch(`${API_URL}/api/ads`, options)
+      .then((res) => {
+      if (res.status === 201) {
+      return res.json();
+      }
+      })
+      .then((res) => {
+      dispatch(addAd(res));
+      });
+
+      //await dispatch(addAd(res.data));
       dispatch(addRequest())
     }
     catch (err) {

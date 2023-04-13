@@ -1,6 +1,7 @@
 const Advert = require('../models/Ads.model.js');
 const getImageFileType = require('../utils/getImageFileType.js');
 const fs = require('fs');
+const User = require('../models/User.model');
 
 exports.getAllAds = async (req, res) => {
   console.log(Advert);
@@ -33,14 +34,43 @@ exports.getAdsBySearchPhrase = async (req, res) => {
   }
 };
 
+/*content
+: 
+"Concept album by the British rock group Pink Floyd from 1973. The themes of the 9 tracks on the album are the problems of modern life: money, greed, transience, madness and war."
+id
+: 
+1
+img
+: 
+"DarkSideOfTheMoon.jpg"
+location
+: 
+"London"
+price
+: 
+20
+publicDate
+: 
+"22.10.2022"
+seller
+: 
+{_id: "6403285f953ed56612c49989", id: 1, login: "John", password: "1234", avatar: "",…}
+title
+: 
+"Pink Floyd - Dark side of the moon"
+_id
+: 
+"64032868953ed56612c49990"*/
+
 exports.addAds = async (req, res) => {
   try {
     console.log(req.file)
     const fileType = req.file ? await getImageFileType(req.file) : 'unknown';
     const imageExtensions = ['image/png', 'image/jpeg', 'image/gif'];
-    const { title, content, date, price, localization } = req.body;
+    const { title, content, date, price, location} = req.body;
     if (title.length > 10 && title.length < 50 && content.length > 20 && content.length < 1000 && imageExtensions.includes(fileType)) {
-      const ad = new Advert({ title, content, date, pic: req.file.filename, price, localization, seller: req.session.userId });
+      const user = await User.findOne({login: 'John'})
+      const ad = new Advert({ title, content, publicDate: date, img: req.file.filename, price, location, seller: user._id });
       await ad.save();
       res.json( ad );  
     } else {

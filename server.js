@@ -21,14 +21,14 @@ db.once('open', () => {
 db.on('error', err => console.log('Error ' + err));
 
 
-if(process.env.NODE_ENV !== 'production') {
+
   app.use(
     cors({
       origin: ['http://localhost:3000'],
       credentials: true,
     })
   );
-}
+
 
 
 app.use(express.json());
@@ -39,11 +39,11 @@ app.use(session({
   secret: 'xyz',
   store: MongoStore.create({
     mongoUrl: 'mongodb+srv://NewUser:Marek12344321@cluster1.zgpws1w.mongodb.net/adDB?retryWrites=true&w=majority',
-    collection: 'sessions',
+    collectionName: 'sessions',
   }), 
   resave: false, 
-  saveUninitialized: false,
-  cookie: {secure: process.env.NODE_ENV == 'production',} 
+  cookie: {secure: true, maxAge: 1000 * 60 * 60 * 24},
+  saveUninitialized: false, 
 }));
 
 
